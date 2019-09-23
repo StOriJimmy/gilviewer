@@ -8,6 +8,7 @@
 #include <sstream>
 #include <fstream>
 #include <stdexcept>
+#include <algorithm>
 
 #define COORDINATE_SEPARATOR " "
 

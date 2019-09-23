@@ -133,7 +133,7 @@ void xml_display_configuration_io::read( layer_control* layerControl , const str
                             {
                                 ostringstream mes;
                                 mes << "File " << path << " does not exist!";
-                                GILVIEWER_LOG_ERROR( mes );
+                                GILVIEWER_LOG_ERROR( mes.str() );
                                 return;
                             }
                         }

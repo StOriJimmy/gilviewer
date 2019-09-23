@@ -57,6 +57,9 @@ BEGIN_EVENT_TABLE(global_settings_control, wxDialog)
         EVT_CLOSE(global_settings_control::on_close_window)
         END_EVENT_TABLE()
 
+#ifndef wxADJUST_MINSIZE
+#define wxADJUST_MINSIZE 0
+#endif
 global_settings_control::global_settings_control(layer_control* parent, wxWindowID id, const wxString& title, long style, const wxPoint& pos, const wxSize& size) :
 	wxDialog( (wxWindow*)parent, id, title, pos, size, style), m_parent(parent)
 {

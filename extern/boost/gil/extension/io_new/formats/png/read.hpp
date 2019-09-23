@@ -165,13 +165,13 @@ public:
         if( this->_settings._read_icc_profile )
         {
             png_charp icc_name = png_charp( NULL );
-            png_charp profile  = png_charp( NULL );
+            png_bytepp profile  = png_bytepp( NULL );
 
             ret._valid_icc_profile = png_get_iCCP( _png_ptr
                                                  , _info_ptr
                                                  , &icc_name
                                                  , &ret._iccp_compression_type
-                                                 , &profile
+                                                 , profile
                                                  , &ret._profile_length
                                                  );
             if( icc_name )
@@ -183,7 +183,7 @@ public:
 
             if( ret._profile_length > 0 )
             {
-                ret._profile.append( profile
+                ret._profile.append( **profile
                                    , ret._profile_length
                                    );
             }

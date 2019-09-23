@@ -274,7 +274,7 @@ void simple_vector_layer::add_text( double x , double y , const std::string &tex
 {
     point_type pt;
     pt.x=x; pt.y=y;
-    m_texts.push_back( make_pair<point_type,string>(pt,text) );
+    m_texts.push_back( make_pair(pt,text) );
 }
 
 void simple_vector_layer::clear()

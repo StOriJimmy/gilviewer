@@ -185,7 +185,7 @@ public:
                         , _info_ptr
                         , const_cast< png_charp >( info._icc_name.c_str() )
                         , info._iccp_compression_type
-                        , const_cast< png_charp >( info._profile.c_str() )
+                        , /*const_cast< png_bytep >*/(png_bytep)( info._profile.c_str() )
                         , info._profile_length
                         );
         }

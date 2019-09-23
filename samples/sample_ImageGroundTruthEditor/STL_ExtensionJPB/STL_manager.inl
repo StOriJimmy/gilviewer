@@ -61,10 +61,14 @@ template < class T > std :: vector < T > read_vector ( const std :: string & pat
     try
     {
         res . clear ( ) ;
-        for ( bool is_read_ok = file >> elem ; is_read_ok ; is_read_ok = file >> elem )
-        {
-            res . push_back ( elem ) ;
-        }
+		while (!file.eof()) {
+			file >> elem;
+			res.push_back(elem);
+		}
+//         for ( bool is_read_ok = file >> elem ; is_read_ok ; is_read_ok = file >> elem )
+//         {
+//             res . push_back ( elem ) ;
+//         }
         file . close() ;
     }
     JPB_CATCH ( "échec de la lecture du fichier \"" + path + "\"" )
